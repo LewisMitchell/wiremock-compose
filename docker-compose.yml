@@ -1,0 +1,10 @@
+name: start-wiremock
+services:
+    wiremock:
+        ports:
+            - ${PORT}:${PORT}
+        container_name: wiremock
+        volumes:
+            - $PWD:/home/wiremock
+        image: wiremock/wiremock:3.4.2
+        command: --port=${PORT}
